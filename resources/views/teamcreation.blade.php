@@ -11,7 +11,7 @@
     @csrf
     @method('post')
     <label for="team_name">Team Name</label>
-    <input type="text" name="team_name" id="team_name">
+    <input type="text" name="team_name">
     <button type="submit">Create Team</button>
 
   </form>
