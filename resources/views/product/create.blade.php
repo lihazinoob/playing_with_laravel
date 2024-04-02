@@ -16,7 +16,7 @@
 <!-- Links -->
 <ul class="navbar-nav">
   <li class="nav-item">
-    <a class="nav-link text-light" href="#">Products</a>
+    <a class="nav-link text-light" href="/">Products</a>
   </li>
   
 </ul>
@@ -24,6 +24,34 @@
 </nav>
   <div class="container">
     <h1>Create a New Product</h1>
+    <div class="row justify-content-center">
+      <div class="col-sm-8">
+      <div class="card mt-3 p-3">
+        <form method="post" action="/storeproduct" enctype="multipart/form-data">
+          @csrf
+          <div class="form-group">
+
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" rows= "4" id="description" name="description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control" id="image" name="image">  
+
+          </div>
+
+          <button type="submit" class="btn btn-dark">Create Product</button>
+
+        </form>
+
+      </div>
+        
+      </div>
+    </div>
   </div>
 </body>
 </html>

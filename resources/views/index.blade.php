@@ -16,6 +16,7 @@
 <!-- Links -->
 <ul class="navbar-nav">
   <li class="nav-item">
+    
     <a class="nav-link text-light" href="#">Products</a>
   </li>
   
@@ -23,6 +24,9 @@
 
 </nav>
   <div class="container">
+  <div class="text-right">
+      <a href="/createproduct" class="btn btn-dark mt-2">New Product</a>
+    </div>
     <h1>Products</h1>
   </div>
 </body>
