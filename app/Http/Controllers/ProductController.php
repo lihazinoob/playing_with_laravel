@@ -9,7 +9,9 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('index');
+    
+        return view('index',['products'=>Product::get()]);
+
     }
     public function create()
     {
@@ -17,21 +19,26 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
-        //dd($request->all());
-        //return view('Product/store');
-        //upload image
+        
+        //validation part
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+        ]);
+
+
+
+        //uploading part
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('productimages'),$imageName);
-
-        //dd($imageName);
-
         $product = new Product();
         $product->name = $request->name;
         $product->description = $request->description;
         $product->image = $imageName;
 
         $product->save();
-        return back();
+        dd($request->all());
 
 
     }

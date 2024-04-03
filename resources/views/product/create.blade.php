@@ -32,15 +32,21 @@
           <div class="form-group">
 
             <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+            @if($errors->has('name'))
+              <p class="text-danger">{{$errors->first('name')}}</p>
+            @endif
           </div>
           <div class="form-group">
             <label for="description">Description:</label>
-            <textarea class="form-control" rows= "4" id="description" name="description"></textarea>
+            <textarea class="form-control" rows= "4" id="description" name="description" >{{old('description')}}</textarea>
+            @if($errors->has('description'))
+              <p class="text-danger">{{$errors->first('description')}}</p>
+            @endif
           </div>
           <div class="form-group">
             <label for="image">Image</label>
-            <input type="file" class="form-control" id="image" name="image">  
+            <input type="file" class="form-control" id="image" name="image" value="old{{'image'}}">  
 
           </div>
 

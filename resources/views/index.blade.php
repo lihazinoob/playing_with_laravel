@@ -28,6 +28,33 @@
       <a href="/createproduct" class="btn btn-dark mt-2">New Product</a>
     </div>
     <h1>Products</h1>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach($products as $product)
+      <tr>
+        
+        <td>{{$loop -> index +1 }}</td>
+        <td>{{$product->name}}</td>
+        <td>{{$product->description}}</td>
+        <td><img src="{{asset('productimages/'.$product->image)}}" alt="image" style="width:100px;height:100px;"></td>
+      </tr>
+     
+    @endforeach  
+    </tbody>
+
+    </table> 
+
+
+
   </div>
 </body>
 </html>
